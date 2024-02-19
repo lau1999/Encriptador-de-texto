@@ -1,0 +1,329 @@
+/* Importar la fuente 'Inter' desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Estilos generales para resetear márgenes y paddings y definir el modelo de caja */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    background: #F3F5FC;
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+    font-family: 'inter';
+}
+
+/* Estilos del área principal de contenido */
+main {
+    padding: 8rem 0 0 4rem;
+    margin-right: 3rem;
+}
+
+/* Estilos para el área de entrada de texto */
+main textarea {
+    border: none;
+    background: transparent;
+    resize: none;
+    font-family: 'inter';
+    font-size: 2rem;
+    height: 400px;
+    width: 100vh;
+}
+
+/* Estilos adicionales para el área de entrada de texto cuando tiene el foco */
+main textarea:focus {
+    outline: none;
+}
+
+/* Estilos para el placeholder del área de entrada de texto, el texto y los botones */
+main textarea::placeholder,
+main textarea,
+.buttons button {
+    color: #0A3871;
+}
+
+/* Estilos para el área que contiene los botones y el texto */
+.botonesYTexto {
+    color: gray;
+}
+
+/* Estilos para los botones */
+.buttons {
+    margin-top: 1rem;
+}
+
+.buttons button {
+    font-size: 1.5rem;
+    border: solid 2px #0A3871;
+    padding: 1rem;
+    width: 300px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Estilos específicos para el primer botón */
+.buttons button:first-child {
+    background-color: #0A3871;
+    margin-right: 1.5rem;
+    color: white;
+}
+
+/* Estilos para el primer botón cuando se encuentra en estado hover */
+.buttons button:first-child:hover {
+    background-color: #052051;
+}
+
+/* Estilos para el segundo botón y el botón de resultado cuando se encuentran en estado hover */
+.buttons button:nth-child(2):hover,
+.resultado button:hover {
+    background-color: #d8ddf0;
+}
+
+/* Estilos para el área de resultado */
+.resultado {
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0px 10px 10px rgb(222, 224, 227);
+    min-width: 350px;
+    width: fit-content !important;
+    padding: 0 1rem;
+}
+
+/* Estilos para la imagen dentro del área de resultado */
+.resultado img {
+    width: 250px;
+    margin: 150px 50px 0 50px;
+}
+
+/* Estilos para el título dentro del área de resultado */
+.resultado h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Estilos para el párrafo dentro del área de resultado */
+.resultado p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+/* Estilos para el contenedor del botón dentro del área de resultado */
+.resultado div {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para el botón dentro del área de resultado */
+.resultado button {
+    font-size: 1.5rem;
+    border: solid 2px #0A3871;
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: transparent;
+    width: 90%;
+    transition: all .5s;
+    color: #0A3871;
+}
+
+/* Estilos para elementos ocultos */
+.oculto {
+    display: none !important;
+}
+
+/* Estilos para la respuesta encriptada/desencriptada */
+.respuesta {
+    font-size: 1.5rem;
+    text-align: left;
+    margin: 40px 20px !important;
+    text-align: left !important;
+    color: rgb(67, 67, 67);
+    height: 75%;
+}
+
+/* Estilos para la notificación */
+.notificacion {
+    position: absolute;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgb(222, 224, 227);
+    color: #0A3871;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    animation-duration: 1s;
+    animation-name: slidein;
+    text-align: center;
+}
+
+/* Animación para la notificación */
+@keyframes slidein {
+    from {
+        top: 0%;
+    }
+    to {
+        top: 5%;
+    }
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media screen and (max-width: 1200px) {
+    body {
+        display: block;
+    }
+
+    aside svg {
+        width: min-content;
+    }
+
+    main {
+        padding: 0;
+        margin-top: 100px;
+        margin: 100px 0 0 0;
+    }
+
+    main textarea {
+        height: 500px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .resultado {
+        margin: 40px 0;
+        padding: 30px;
+    }
+
+    .resultado img {
+        display: none;
+    }
+
+    .resultado p {
+        height: fit-content;
+    }
+
+    main,
+    main textarea,
+    .botonesYTexto,
+    .resultado {
+        width: 900px;
+    }
+
+    .resultado button {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .resultado p {
+        margin-top: 0;
+    }
+
+    .respuesta {
+        font-size: 1.2rem;
+        margin: 0 !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        display: block;
+    }
+
+    aside svg {
+        width: min-content;
+    }
+
+    main {
+        padding: 0;
+        margin-top: 100px;
+        margin: 100px 0 0 0;
+        width: 670px;
+    }
+
+    main textarea {
+        height: 500px;
+        width: 670px;
+    }
+
+    .botonesYTexto {
+        width: 670px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .resultado {
+        margin: 40px 0;
+        min-width: 670px;
+        width: fit-content !important;
+        padding: 30px;
+    }
+
+    .resultado img {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    body {
+        padding: 25px;
+    }
+
+    main {
+        width: 350px;
+    }
+
+    main textarea {
+        width: 350px;
+        height: 350px;
+    }
+
+    .buttons {
+        width: 350px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botonesYTexto {
+        width: 350px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .buttons button:first-child {
+        margin: 0 0 20px 0;
+    }
+
+    .resultado {
+        min-width: 350px;
+        width: fit-content;
+    }
+
+}
+
+/* Estilos para el pie de página */
+footer {
+    padding: 1rem; /* Ajusta el espacio interno según tus necesidades */
+    text-align: center; /* Centra el texto dentro del pie de página */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
