@@ -25,24 +25,24 @@ function desencriptarTexto() {
 function procesarTexto(patrones) {
     const texto = elementosDOM.textarea.value;
 
-    // Validar el texto antes de encriptar
+    // Validar el texto antes de procesar
     if (!validarTexto(texto)) {
         mostrarNotificacion("El texto debe contener solo letras minúsculas y sin acentos ni caracteres especiales.");
         return;
     }
 
     // Crear una expresión regular dinámica con los patrones
-    const regex = new RegExp(Object.keys(patrones).join("|"), "g");
+    const regex = new RegExp(Object.keys(patrones).join("|") + '| ', "g");
 
     // Aplicar los patrones al texto y mostrar la respuesta
-    textoProcesado = texto.replace(regex, match => patrones[match]);
+    textoProcesado = texto.replace(regex, match => patrones[match] || match);
     mostrarRespuesta(textoProcesado);
 }
 
 // Función para validar caracteres permitidos
 function validarTexto(texto) {
     // Solo letras minúsculas sin acentos ni caracteres especiales
-    const regex = /^[a-z]*$/;
+    const regex = /^[a-z ]*$/;
 
     // Verificar si el texto cumple con la regex
     return regex.test(texto);
