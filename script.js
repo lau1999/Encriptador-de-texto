@@ -6,7 +6,9 @@ const elementosDOM = {
     pResultado: document.getElementById("pResultado"),
     copiarResultado: document.getElementById("copiarResultado"),
     notificacion: document.getElementById("notificacion"),
-    notificacionTexto: document.getElementById("notificacionTexto")
+    notificacionTexto: document.getElementById("notificacionTexto"),
+    encriptarBoton: document.getElementById("encriptarBoton"), // Agregado para enlazar el botón de encriptar
+    desencriptarBoton: document.getElementById("desencriptarBoton"), // Agregado para enlazar el botón de desencriptar
 };
 
 let textoProcesado = "";
@@ -104,4 +106,10 @@ elementosDOM.textarea.addEventListener("input", function () {
 elementosDOM.encriptarBoton.addEventListener("click", function () {
     // Llamar a la función procesarTexto al hacer clic en el botón de encriptar
     procesarTexto({ 'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' });
+});
+
+// Agregar evento de clic en el botón de desencriptar
+elementosDOM.desencriptarBoton.addEventListener("click", function () {
+    // Llamar a la función procesarTexto con los patrones inversos al hacer clic en el botón de desencriptar
+    procesarTexto({ 'ai': 'a', 'enter': 'e', 'imes': 'i', 'ober': 'o', 'ufat': 'u' });
 });
