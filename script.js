@@ -24,8 +24,10 @@ function desencriptarTexto() {
 // Función principal para procesar el texto con patrones específicos
 function procesarTexto(patrones) {
     const texto = elementosDOM.textarea.value;
-    if (!texto) {
-        mostrarDefault();
+
+    // Validar el texto antes de encriptar
+    if (!validarTexto(texto)) {
+        mostrarNotificacion("El texto debe contener solo letras minúsculas y sin acentos ni caracteres especiales.");
         return;
     }
 
@@ -39,7 +41,10 @@ function procesarTexto(patrones) {
 
 // Función para validar caracteres permitidos
 function validarTexto(texto) {
-    const regex = /^[a-z\s]*$/;
+    // Solo letras minúsculas sin acentos ni caracteres especiales
+    const regex = /^[a-z]*$/;
+
+    // Verificar si el texto cumple con la regex
     return regex.test(texto);
 }
 
@@ -62,7 +67,7 @@ function mostrarNotificacion(mensaje) {
     }, 2000);
 }
 
-// Función para mostrar el resultado en la interfaz
+// Función para mostrar la respuesta encriptada
 function mostrarRespuesta(respuesta) {
     elementosDOM.imgResultado.classList.add("oculto");
     elementosDOM.h3Resultado.classList.add("oculto");
@@ -93,4 +98,10 @@ elementosDOM.textarea.addEventListener("input", function () {
     }
     elementosDOM.notificacion.classList.add("oculto");
     elementosDOM.notificacionTexto.innerHTML = "";
+});
+
+// Agregar evento de clic en el botón de encriptar
+elementosDOM.encriptarBoton.addEventListener("click", function () {
+    // Llamar a la función procesarTexto al hacer clic en el botón de encriptar
+    procesarTexto({ 'a': 'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' });
 });
