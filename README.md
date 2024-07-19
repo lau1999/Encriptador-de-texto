@@ -38,3 +38,6 @@ El encriptador de texto es un reto de Alura Latam:
 
 **Nota Adicional:**
 - Este encriptador de texto fue desarrollado como parte de un reto propuesto por Alura Latam. Durante cuatro semanas, los participantes trabajaron en una aplicación para encriptar textos, aplicando los principios de lógica de programación y utilizando JavaScript. El proyecto sigue una metodología ágil de desarrollo y se organiza mediante Trello. ¡Bienvenidas y bienvenidos a este desafío de Alura Latam!
+
+
+![Encriptador](https://github.com/user-attachments/assets/a153eb2c-7a37-4148-b7cd-139d057529c3)
