@@ -51,3 +51,6 @@ Este codificador de texto es parte del reto de Alura Latam, diseñado para pract
 [Ver el proyecto en línea](https://lau1999.github.io/Encriptador-de-texto/)
 
 ![Encriptador](https://github.com/user-attachments/assets/1751069a-b445-4dee-b375-2442b599b5c0)
+
+![1721359938122](https://github.com/user-attachments/assets/40f1a0c3-afe0-497c-a732-09995586f195)
+
